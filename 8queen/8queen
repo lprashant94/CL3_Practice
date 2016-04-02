@@ -1,0 +1,70 @@
+int isColumnSafe(int chessBoard[N][N], int col){
+
+        int i;
+        for(i=0; i<N; i++){
+                if(chessBoard[i][col]) return 0;
+        }
+        return 1;
+
+}
+int isRowSafe(int chessBoard[N][N], int row){
+
+        int i;
+        for(i=0; i<N; i++){
+                if(chessBoard[row][i]) return 0;
+        }
+        return 1;
+
+}
+int isDiagonalSafe(int chessBoard[N][N], int row, int col){
+
+        int i,j;
+
+        /* Check the left upper diagonal */
+
+        for(i=row, j = col; i>=0 && j>=0; i--, j--){
+                if(chessBoard[i][j]) return 0;
+        }
+
+        /*check left lower diagonal */
+        for(i=row, j = col; i<N && j>=0; i++, j--){
+                if(chessBoard[i][j]) return 0;
+        }
+        return 1;
+
+}
+
+int isSafe(int chessBoard[N][N], int row, int col){
+
+        int columnSafe = isColumnSafe(chessBoard, col);
+        int rowSafe = isRowSafe(chessBoard, row);
+        int diagonalSafe  = isDiagonalSafe(chessBoard, row, col);
+
+        return columnSafe && rowSafe && diagonalSafe;
+
+}
+
+void placeQueen(int chessBoard[N][N], int i, int j){
+
+        chessBoard[i][j] =1;
+}
+void removeQueen(int chessBoard[N][N], int i, int j){
+
+        chessBoard[i][j] =0;
+}
+
+int solveQueens(int chessBoard[N][N], int col){
+
+        int i;
+        if(col >=N) return 1;
+
+        for(i = 0; i<N; i++){
+             if(isSafe(chessBoard, i, col)){
+                   placeQueen(chessBoard, i, col);
+                   if(solveQueens(chessBoard,col+1)) return 1;
+
+                   removeQueen(chessBoard,i,col);
+             }
+        }
+        return 0;
+}    

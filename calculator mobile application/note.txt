@@ -1,0 +1,9 @@
+MC > Clears the memory
+
+MR > Recall value in memory
+
+MS > Save value into memory
+
+M+ > Adds the cur­rently dis­played num­ber on your cal­cu­la­tor to the  num­ber in memory
+
+M– > Sub­tracts the cur­rently dis­played num­ber from the num­ber in memory

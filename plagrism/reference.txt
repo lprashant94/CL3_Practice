@@ -1,0 +1,11 @@
+Detecting Plagiarism in Code
+
+To detect plagiarized code, the most popular tool is the MOSS system. (If you already know you want to use MOSS this quarter, skip to "Getting Started" below). Using MOSS involves packaging up students' solutions, submitting them for automated examination, and reviewing the results.
+
+Here's a bit of background about the process: There's a long history of automated systems for detecting plagiarized code. They're useful for detecting "equivalence classes" of programs, though of course a trained human eye still needs to review what the system turns up before any accusations are made.
+
+Another characteristic is that these systems don't work well for short, highly constrained solutions. If there's not much room for variation in the first place, similarity may not indicate collusion. Thus, assignments with solutions shorter than about two pages of code aren't usually worth checking with these systems.
+
+The MOSS system runs at Stanford and is managed by Alex Aiken (who was Alex Nicolau's student). There are details at http://cs.stanford.edu/~aiken/moss/ . It works for programs written in C, C++, Java, Pascal, Ada, ML, Lisp, or Scheme. Its results come back as a web page that highlights suspicious pairs and eases navigation to the similar sections of code. MOSS can also eliminate from consideration common code supplied by the instructor.
+
+Detecting Plagiarism in Prose
