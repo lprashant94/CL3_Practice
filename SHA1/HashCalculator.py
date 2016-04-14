@@ -18,6 +18,24 @@ def HashMessage(message):
     return h.hexdigest()
 
 
+class SHA1:
+    def __init__(self):
+        self.h0 = int('01100111010001010010001100000001',2)
+        self.h1 = int('11101111110011011010101110001001',2)
+        self.h2 = int('10011000101110101101110011111110',2)
+        self.h3 = int('00010000001100100101010001110110',2)
+        self.h4 = int('11000011110100101110000111110000',2)
+        print(str(hex(self.h0)))
+        print(str(hex(self.h1)))
+        print(str(hex(self.h2)))
+        print(str(hex(self.h3)))
+        print(str(hex(self.h4)))
+        
+    def HashMessage(self,message):
+        print(message,len(message));
+        return 1
+
+
 class Server:
     'For Integrity of message HashMessage is Used, Hash of message is sent just after message usecases are corrpution check, providing large file on third party server, testing integrity of disk and images, file compare'
     def start(self):
@@ -66,6 +84,10 @@ class Client:
         
 #message = Calculate_hash_file("HashCalculator.py")
 #print(message)
+
+a=SHA1()
+a.HashMessage("Hello This Is Prashant".encode())
+
 
 hash = HashMessage("Hello This Is Prashant".encode());
 #print(hash)

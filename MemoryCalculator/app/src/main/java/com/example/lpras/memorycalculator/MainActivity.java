@@ -80,10 +80,18 @@ public class MainActivity extends AppCompatActivity {
         Button mem_plus=(Button)findViewById(R.id.mem_plus);
         Button mem_minus=(Button)findViewById(R.id.mem_minus);
         Button mem_clear=(Button)findViewById(R.id.mem_clear);
+        Button sqrt=(Button)findViewById(R.id.sqrt_button);
         final EditText curr=(EditText)findViewById(R.id.current);
         final TextView res=(TextView)findViewById(R.id.Result);
         final TextView memory=(TextView)findViewById(R.id.Memory);
-
+        sqrt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Float no=Float.parseFloat(curr.getText().toString());
+                Double root=Math.sqrt(no);
+                res.setText(root.toString());
+            }
+        });
         mem_clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

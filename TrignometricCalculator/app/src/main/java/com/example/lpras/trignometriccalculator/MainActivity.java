@@ -23,6 +23,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final EditText edittext1=(EditText)findViewById(R.id.editText);
+        Button sqrt=(Button)findViewById(R.id.sqrt_button);
+        sqrt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Float a= Float.parseFloat(edittext1.getText().toString());
+                Double s= Math.sqrt(a);
+                edittext1.setText(s+"");
+            }
+        });
+
         final Switch switch1=(Switch)findViewById(R.id.switch1);
         switch1.setOnClickListener(new View.OnClickListener() {
             @Override
