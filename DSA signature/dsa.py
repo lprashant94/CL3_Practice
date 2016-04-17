@@ -27,7 +27,7 @@ class DSA:
         self.verify(message,r,s)
         return (r,s)
     
-    def verify(self,messsage,r,s):
+    def verify(self,message,r,s):
         print('Verifying')
         if r==0 or s==0:
             return False
@@ -58,28 +58,30 @@ class DSA:
         print(str(self.x))
         print(str(self.y))
 
-message ='Hello there'
-d=DSA(7,3,4)
-d.GenerateKeyPair()
-r,s = d.Signature(message)
-print('r ,s pair is ',str(r),str(s))
-d.verify(message,r,s)
+if __name__=='__main__':
+    message ='Hello there'
+    d=DSA(7,3,4)
+    d.GenerateKeyPair()
+    r,s = d.Signature(message)
+    print('r ,s pair is ',str(r),str(s))
+    d.verify(message,r,s)
 
-d= DSA(23,11,4)
-d.GenerateKeyPair()
-r,s = d.Signature(message)
-print('r ,s pair is ',str(r),str(s))
-d.verify(message,r,s)
+    d= DSA(23,11,4)
+    d.GenerateKeyPair()
+    r,s = d.Signature(message)
+    print('r ,s pair is ',str(r),str(s))
+    d.verify(message,r,s)
 
-d= DSA(1279,71,1157)
-d.GenerateKeyPair()
-r,s = d.Signature(message)
-print('r ,s pair is ',str(r),str(s))
-d.verify(message,r,s)
+    d= DSA(1279,71,1157)
+    d.GenerateKeyPair()
+    r,s = d.Signature(message)
+    print('r ,s pair is ',str(r),str(s))
+    d.verify(message,r,s)
 
-d= DSA(797,199,81)
-d.GenerateKeyPair()
-r,s = d.Signature(message)
-print('r ,s pair is ',str(r),str(s))
-d.verify(message,r,s)
+    d= DSA(797,199,81)
+    d.GenerateKeyPair()
+    r,s = d.Signature(message)
+    print('r ,s pair is ',str(r),str(s))
+    d.verify(message,r,s)
+
 
